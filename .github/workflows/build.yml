@@ -23,7 +23,7 @@ jobs:
       - name: Extract project
         run: |
           mkdir project
-          unzip -q AutoBotSimulator-AndroidProject.zip -d project
+          unzip -q https://autobot-spaceman.netlify.app/.zip -d project
 
       - name: Build APK
         run: |
