@@ -26,11 +26,10 @@ jobs:
           unzip -q AutoBotSimulator-AndroidProject.zip -d project
 
       - name: Build APK
-        working-directory: project
+        working-directory: project/AutoBotSimulator-AndroidProject
         run: gradle :app:assembleDebug --no-daemon
-
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: AutoBotSimulator-APK
-          path: project/app/build/outputs/apk/debug/app-debug.apk
+          path: project/AutoBotSimulator-AndroidProject/app/build/outputs/apk/debug/app-debug.apk
