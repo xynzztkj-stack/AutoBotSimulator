@@ -29,10 +29,10 @@ jobs:
         run: |
           PROJECT_DIR=$(find project -type f \( -name settings.gradle -o -name settings.gradle.kts \) -print -quit | xargs dirname)
           cd "$PROJECT_DIR"
-         gradle :app:assembleDebug --no-daemon
-         cp app/build/outputs/apk/debug/app-debug.apk "$GITHUB_WORKSPACE/app-debug.apk"
+          gradle :app:assembleDebug --no-daemon       
+          cp app/build/outputs/apk/debug/app-debug.apk "$GITHUB_WORKSPACE/app-debug.apk"
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-        name: AutoBotSimulator-APK
-        path: app-debug.apk
+         name: AutoBotSimulator-APK
+         path: app-debug.apk
